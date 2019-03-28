@@ -1,0 +1,11 @@
+
+create table speed(id uuid primary key, imei text, portno int, speed float, actualdate timestamp, unprocessedcreateddate timestamp);
+
+
+CREATE TABLE sample
+(
+  id UUID,
+  imei TEXT,
+ avgspeed FLOAT, windowendtime TIMESTAMP,
+  PRIMARY KEY((imei), windowendtime, id)
+);

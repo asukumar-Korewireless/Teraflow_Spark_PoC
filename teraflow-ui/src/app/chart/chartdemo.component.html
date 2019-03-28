@@ -1,0 +1,36 @@
+<h2 style="text-align:center">WELCOME</h2>
+<div class="card">
+  <div class="container textbox-container">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="form-group col-6">
+        <div class="form-group">
+          <select class="form-control" id="imeiList" (input)="selectedImei=$event.target.value">
+            <option selected disabled>Select Vehicle</option>
+            <option *ngFor="let imei of imeiList" [value]="imei">{{imei}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-primary" type="submit" (click)="showGraph()">Show</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container table-container">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <h4 style="text-align:center; color: brown">Average speed analysis chart for vehicle {{selectedImei}}</h4>
+      </div>
+      <div class="col-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <chart [options]="options"></chart>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+</div>
